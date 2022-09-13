@@ -1,0 +1,27 @@
+<mvc:View controllerName="adminbusbooking.controller.AdminMainPage"
+    
+   xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartform="sap.ui.comp.smartform" 
+	xmlns:smartfield="sap.ui.comp.smartfield" class="sapUiSizeCompact">
+	
+    <Page id="page3" title="{i18n>MPUserTitle}" showNavButton="true" navButtonPress="GoToLogin" >
+        <content>
+            
+    
+    <VBox id="VBox2" fitContainer="true"    
+		alignItems="Center" 
+		alignContent="Center">
+        <items>
+    <Button id="Button1" width="12rem" text="Edit Stops" type="Emphasized" press="onTapStop" class="sapUiSmallMarginEnd" />
+    <Button id="Button2" width="12rem" text="Edit Routes" type="Emphasized" press="onTapRoutes" class="sapUiSmallMarginEnd" />
+    <Button id="Button3" width="12rem" text="Edit Connections" type="Emphasized" press="onTapConnections" class="sapUiSmallMarginEnd" />
+    <Button id="Button4" width="12rem" text="Edit Buses" type="Emphasized" press="onTapBuses" class="sapUiSmallMarginEnd" />
+
+	    </items>
+	</VBox>
+
+
+        </content>
+    </Page>
+</mvc:View>

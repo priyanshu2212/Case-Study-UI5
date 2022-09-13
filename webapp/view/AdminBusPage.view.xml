@@ -1,0 +1,42 @@
+<mvc:View controllerName="adminbusbooking.controller.AdminBusPage"
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartform="sap.ui.comp.smartform" 
+	xmlns:smartField="sap.ui.comp.smartfield" 
+    height="100%"
+    xmlns:l="sap.ui.layout" 	
+    xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"  
+    class="sapUiSizeCompact">
+	
+    <Page id="page2" title="{i18n>MPUserTitle}" showNavButton="true" navButtonPress="GoToAdminHomePage">
+        <content>
+            
+           <smartform:SmartForm id="smartform1" editTogglable="true" editable="true" title="BUSES">
+				<smartform:Group id="G1" label="Select the Bus" >
+					<smartform:GroupElement>
+                        
+						<smartField:SmartField textLabel="Bus" >
+                            
+                     </smartField:SmartField>
+                        				
+					</smartform:GroupElement>
+				
+				</smartform:Group>
+
+			</smartform:SmartForm>
+
+            <VBox id="VBox1" fitContainer="true"    
+                    alignItems="Center" 
+                    alignContent="Center">
+                <items>
+                    <Button id="Button1" width="12rem" text="Add" type="Emphasized" press="onAdd" class="sapUiSmallMarginEnd" />
+                    <Button id="Button2" width="12rem" text="Delete" type="Emphasized" press="onDelete" class="sapUiSmallMarginEnd" />
+                    <Button id="Button3" width="12rem" text="Update" type="Emphasized" press="onUpdate" class="sapUiSmallMarginEnd" />
+                    <Button id="Button4" width="12rem" text="View" type="Emphasized" press="onView" class="sapUiSmallMarginEnd" />
+                </items>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,53 @@
+<mvc:View controllerName="adminbusbooking.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form">
+    <App id="App">
+     <pages>
+            <Page id="page1" title="{i18n>title}">
+                <content>
+                    <Panel id="Panel1" 
+							headerText="Admin Login Page"
+							class="sapUiResponsiveMargin"
+							width="auto">
+							<VBox id="VBox1" fitContainer="true" 
+								justifyContent="Center"
+							 alignItems="Center" 
+							 alignContent="Center">
+                    <form:SimpleForm editable="true" layout="ResponsiveGridLayout" 
+                    adjustLabelSpan="false" labelSpanL="4" labelSpanM="4" labelSpanS="12" 
+                    columnsL="1" columnsM="1" emptySpanL="4" emptySpanM="4">
+                        <form:content>
+                        <Label text="Username" required="true"></Label>
+                        <Input id="inp_usernameId"></Input>
+                        <Label text="Password" required="true"></Label>
+                        <Input id="inp_passwordId" type="Password"></Input>
+                        </form:content>
+                    </form:SimpleForm>
+                 <Button id="UserMP" text="Login" type="Emphasized" press="onLoginPress" ariaLabelledBy="Go to Admin Main Page"/>
+                </VBox>
+            </Panel>
+                </content> 
+                <footer >
+                    <Bar>
+                        <contentLeft>
+                            <Text text="SAP" class="sapUiSmallMargin"></Text>
+                            <Link text="Contact Us" class="sapUiSmallMargin" />
+                            <Link text="About the site" class="sapUiSmallMargin" />
+                            <Link text="Quick Links" class="sapUiSmallMargin" />
+                            <Link text="Corporate Travels" class="sapUiSmallMargin" />
+                        </contentLeft>
+                        <contentRight>
+                            <Link text="Testimonials" class="sapUiSmallMargin"/>
+                            <Link text="Facebook" class="sapUiSmallMargin"/>
+                            <Link text="Twitter" class="sapUiSmallMargin"/>
+                            <Link text="Instagram" class="sapUiSmallMargin"/>
+                        </contentRight>
+                        
+                    </Bar>
+                </footer>
+            </Page>
+        </pages>           
+    </App>
+</mvc:View>
