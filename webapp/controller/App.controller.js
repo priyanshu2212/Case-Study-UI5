@@ -10,6 +10,7 @@ sap.ui.define(
 
         },
         onLoginPress: function(){
+          
           var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			    oRouter.navTo("RouteAdminPage", {} );     
         }
