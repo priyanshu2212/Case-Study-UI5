@@ -23,7 +23,7 @@ sap.ui.define(
         },
         onView: function(){
           var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			    alert("Implementation left");
+			    oRouter.navTo("AdminStopHome",{});
         },
         GoToAdminHomePage: function(){
           var oRouter = sap.ui.core.UIComponent.getRouterFor(this);

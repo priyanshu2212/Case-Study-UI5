@@ -44,7 +44,7 @@
                     <Button id="Button1" width="12rem" text="Add" type="Emphasized" press="onAdd" class="sapUiSmallMarginEnd" />
                     <Button id="Button2" width="12rem" text="Delete" type="Emphasized" press="onDelete" class="sapUiSmallMarginEnd" />
                     <Button id="Button3" width="12rem" text="Update" type="Emphasized" press="onUpdate" class="sapUiSmallMarginEnd" />
-                    <!-- <Button id="Button4" width="12rem" text="View" type="Emphasized" press="onView" class="sapUiSmallMarginEnd" /> -->
+                    <Button id="Button4" width="12rem" text="View" type="Emphasized" press="onView" class="sapUiSmallMarginEnd" />
                 </items>
             </VBox>
         </content>

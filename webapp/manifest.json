@@ -100,6 +100,26 @@
           
         },
         {
+          "name": "AdminStopHome",
+          "pattern": "AdminStopHome",
+          "target":  "TargetStopHomePage"
+        },
+        {
+          "name": "AdminConnectionHome",
+          "pattern": "AdminConnectionHome",
+          "target":  "TargetConnectionHomePage"
+        },
+        {
+          "name": "AdminBusHome",
+          "pattern": "AdminBusHome",
+          "target":  "TargetBusHomePage"
+        },
+        {
+          "name": "AdminRouteHome",
+          "pattern": "AdminRouteHome",
+          "target":  "TargetRouteHomePage"
+        },
+        {
           "name": "RouteAdminPage",
           "pattern": "AdminMainPage",
           "target":  "TargetAdminPage"
@@ -131,6 +151,22 @@
         }
       ],
       "targets": {
+        "TargetStopHomePage":{
+          "viewType": "XML",
+          "viewName": "AdminStopHome"
+        },
+        "TargetConnectionHomePage":{
+          "viewType": "XML",
+          "viewName": "AdminConnectionHome"
+        },
+        "TargetBusHomePage":{
+          "viewType": "XML",
+          "viewName": "AdminBusHome"
+        },
+        "TargetRouteHomePage":{
+          "viewType": "XML",
+          "viewName": "AdminRouteHome"
+        },
         "TargetLoginPage": {
           "viewType": "XML",
           "viewName": "App"

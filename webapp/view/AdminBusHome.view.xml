@@ -1,0 +1,139 @@
+<mvc:View
+    controllerName="adminbusbooking.controller.AdminBusHome"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns:form="sap.ui.comp.smartform"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page id="pageStopHome" title="{i18n>busHomeTitle}">
+        <content>
+            <IconTabBar id="tabBar" class="sapUiResponsiveContentPadding" select="onTabChanged">
+                <items>
+                    <IconTabFilter text="View Stops" key="tab1">
+                        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Bus"  persistencyKey="SmartFilter_Explored">
+                            <smartFilterBar:controlConfiguration>
+                                <smartFilterBar:ControlConfiguration key="bus_registration_no" label="Bus Registration No" visibleInAdvancedArea="true" />
+                            </smartFilterBar:controlConfiguration>
+                            <smartFilterBar:controlConfiguration>
+                                <smartFilterBar:ControlConfiguration key="NoOfSeats" label="No Of Seats" visibleInAdvancedArea="true" />
+                            </smartFilterBar:controlConfiguration>
+                            <smartFilterBar:controlConfiguration>
+                                <smartFilterBar:ControlConfiguration key="ValidTill" label="Valid till" visibleInAdvancedArea="true" />
+                            </smartFilterBar:controlConfiguration>
+                        </smartFilterBar:SmartFilterBar>
+                        <HBox>
+                            <smartTable:SmartTable
+                                id="smartStopTable"
+                                entitySet="Bus"
+                                smartFilterId="smartFilterBar"
+                                tableType="ResponsiveTable"
+                                useExportToExcel="true"
+                                beforeExport="onBeforeExport"
+                                useVariantManagement="false"
+                                useTablePersonalisation="true"
+                                header="Buses"
+                                customData:useSmartToggle="true"
+                                showRowCount="true"
+                                persistencyKey="SmartTableAnalytical_Explored"
+                                enableAutoBinding="true"
+                                class="sapUiResponsiveContentPadding"
+                                enableAutoColumnWidth="false"
+                                initiallyVisibleFields="StopId,StopName,City,ValidTill"
+                            >
+                                <Table id="stopData">
+                                    <columns>
+                                        <Column>
+                                            <customData>
+                                                <core:CustomData
+                                                    key="p13nData"
+                                                    value='\{"columnKey": "None1", "autoColumnWidth": \{ "visibleProperty": "StopId" }, "columnIndex": 0, "leadingProperty": "StopId", "sortProperty": "StopId", "additionalProperty": "StopId", "description": "StopId", "displayBehaviour": "descriptionOnly", "width": "100px"}'
+                                                />
+                                            </customData>
+                                            <Label text="Edit" />
+                                        </Column>
+                                        <Column>
+                                            <customData>
+                                                <core:CustomData
+                                                    key="p13nData"
+                                                    value='\{"columnKey": "None2", "autoColumnWidth": \{ "visibleProperty": "StopCode" }, "columnIndex": 0, "leadingProperty": "StopCode", "sortProperty": "StopCode", "additionalProperty": "StopCode", "description": "StopCode", "displayBehaviour": "descriptionOnly", "width": "100px"}'
+                                                />
+                                            </customData>
+                                            <Label text="Delete" />
+                                        </Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Button 
+                                                    text='edit'
+                                                    press=".onEditClick" />
+                                                <Button 
+                                                    text='delete'
+                                                    press=".onDeleteClick" />
+                                            </cells>
+                                            <customData>
+                                            <!-- doubt here -->
+                                                <core:CustomData key="logStopCode" value="{bus_registration_no}" writeToDom="true"/>  
+                                            </customData>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </smartTable:SmartTable>
+                        </HBox>
+                    </IconTabFilter>
+                    <IconTabFilter text="Create / Manage" key="tab2">
+                        <f:SimpleForm
+                            id="SimpleFormChange354wide"
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            title="Bus"
+                            labelSpanXL="4"
+                            labelSpanL="3"
+                            labelSpanM="4"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="0"
+                            emptySpanL="4"
+                            emptySpanM="0"
+                            emptySpanS="0"
+                            columnsXL="2"
+                            columnsL="1"
+                            columnsM="1"
+                            singleContainerFullSize="false"
+                        >
+                            <f:content>
+                                <Label id="stopCodeLabel" text="Bus Registration No" labelFor="busRegistrationNo" required="true" />
+                                <Input id="stopCode" type="Text" required="true" value="{adminBus>/bus_registration_no}" ariaLabelledBy="stopCodeLabel" width="20rem" />
+                                <Label id="stopNameLabel" text="No Of Seats" labelFor="noOfSeats" required="true" />
+                                <Input id="stopName" type="Text" required="true" value="{adminBus>/NoOfSeats}" ariaLabelledBy="stopNameLabel" width="20rem" />
+                                <!-- <Label id="cityLabel" text="City" labelFor="city" required="true" />
+                                <Input id="city" type="Text" required="true" value="{adminStop>/City}" ariaLabelledBy="cityLabel" width="20rem" /> -->
+                                <!-- <Label id="districtLabel" text="District" labelFor="district" required="true" />
+                                <Input id="district" type="Text" required="true" value="{adminStop>/District}" ariaLabelledBy="districtLabel" width="20rem" />
+                                <Label id="addressLabel" text="Address" labelFor="address"  />
+                                <Input id="address" type="Text" value="{adminStop>/Address}" ariaLabelledBy="addressLabel" width="20rem" />
+                                <Label id="geoLatLabel" text="Geo Latitude" labelFor="geoLat" required="true" />
+                                <Input id="geoLat" type="Text" required="true" value="{adminStop>/GeoLat}" ariaLabelledBy="geoLatLabel" width="20rem" />
+                                <Label id="geoLonLabel" text="Geo Longitude" labelFor="geoLon" required="true" />
+                                <Input id="geoLon" type="Text" value="{adminStop>/GeoLon}" ariaLabelledBy="geoLonLabel" width="20rem" /> -->
+                                <Label id="validTillLabel" text="Valid Till" labelFor="ValidTill" />
+                                <Input id="validTill" type="Date" value="{adminBus>/ValidTill}" ariaLabelledBy="validTillLabel" width="20rem" />
+                            </f:content>
+                        </f:SimpleForm>
+
+                        <HBox height="100%" width="100%" alignItems="Center">
+                            <Button text="save" press=".saveStopData" />
+                        </HBox>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>
