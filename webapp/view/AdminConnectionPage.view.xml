@@ -15,12 +15,28 @@
             
            <smartform:SmartForm id="smartform1" editTogglable="true" editable="true" title="CONNECTIONS">
 				<smartform:Group id="G1" label="Select the Connection" >
-					<smartform:GroupElement>
+					 <smartform:GroupElement>
                         
-						<smartField:SmartField textLabel="Connection" >
-                            
-                     </smartField:SmartField>
-                        				
+						<smartField:SmartField textLabel="Bus Registration Number" entitySet='Connection' value="{BusRegistrationNo}"/>
+                                            				
+					</smartform:GroupElement>
+
+                    <smartform:GroupElement>
+                        
+						<smartField:SmartField textLabel="Valid till" entitySet='Connection' value="{Validtill}"/>
+                                            				
+					</smartform:GroupElement>
+
+                    <smartform:GroupElement>
+                        
+						<smartField:SmartField textLabel="Origin" entitySet='Connection' value="{Origin}" />
+                              				
+					</smartform:GroupElement>
+
+                    <smartform:GroupElement>
+                        
+                        <smartField:SmartField textLabel="Destination" entitySet='Connection' value="{Destination}" />
+                              				
 					</smartform:GroupElement>
 				
 				</smartform:Group>

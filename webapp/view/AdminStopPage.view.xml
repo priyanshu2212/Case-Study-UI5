@@ -15,14 +15,25 @@
             
            <smartform:SmartForm id="smartform1" editTogglable="true" editable="true" title="STOPS">
 				<smartform:Group id="G1" label="Select the Stop" >
+                  
 					<smartform:GroupElement>
-                        
-						<smartField:SmartField textLabel="Stop" >
-                            
-                     </smartField:SmartField>
-                        				
+                       
+						<smartField:SmartField textLabel="Stop name" entitySet='Stop' value="{StopName}" width="250px" />
+                       	
 					</smartform:GroupElement>
-				
+
+                    <smartform:GroupElement>
+                       
+						<smartField:SmartField textLabel="City" entitySet='Stop' value="{City}" width="250px" />
+                       	
+					</smartform:GroupElement>
+
+                    <smartform:GroupElement>
+                       
+						<smartField:SmartField textLabel="Valid till" entitySet='Stop' value="{Validtill}" width="250px" />
+                       	
+					</smartform:GroupElement>
+				 	
 				</smartform:Group>
 
 			</smartform:SmartForm>
@@ -34,7 +45,7 @@
                     <Button id="Button1" width="12rem" text="Add" type="Emphasized" press="onAdd" class="sapUiSmallMarginEnd" />
                     <Button id="Button2" width="12rem" text="Delete" type="Emphasized" press="onDelete" class="sapUiSmallMarginEnd" />
                     <Button id="Button3" width="12rem" text="Update" type="Emphasized" press="onUpdate" class="sapUiSmallMarginEnd" />
-                    <Button id="Button4" width="12rem" text="View" type="Emphasized" press="onView" class="sapUiSmallMarginEnd" />
+                    <!-- <Button id="Button4" width="12rem" text="View" type="Emphasized" press="onView" class="sapUiSmallMarginEnd" /> -->
                 </items>
             </VBox>
         </content>

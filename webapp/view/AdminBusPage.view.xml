@@ -17,10 +17,26 @@
 				<smartform:Group id="G1" label="Select the Bus" >
 					<smartform:GroupElement>
                         
-						<smartField:SmartField textLabel="Bus" >
-                            
-                     </smartField:SmartField>
-                        				
+						<smartField:SmartField textLabel="Bus type" entitySet='Bus' value="{BusType}"/>
+                                            				
+					</smartform:GroupElement>
+
+                    <smartform:GroupElement>
+                        
+						<smartField:SmartField textLabel="Number of seats" entitySet='Bus' value="{NoOfSeats}"/>
+                                            				
+					</smartform:GroupElement>
+
+                    <smartform:GroupElement>
+                        
+						<smartField:SmartField textLabel="Valid till" entitySet='Bus' value="{ValidTill}"/>
+                                            				
+					</smartform:GroupElement>
+
+                    <smartform:GroupElement>
+                        
+						<smartField:SmartField textLabel="Bus Registration Number" entitySet='Bus' value="{BusRegistrationNo}"/>
+                                            				
 					</smartform:GroupElement>
 				
 				</smartform:Group>
@@ -34,7 +50,7 @@
                     <Button id="Button1" width="12rem" text="Add" type="Emphasized" press="onAdd" class="sapUiSmallMarginEnd" />
                     <Button id="Button2" width="12rem" text="Delete" type="Emphasized" press="onDelete" class="sapUiSmallMarginEnd" />
                     <Button id="Button3" width="12rem" text="Update" type="Emphasized" press="onUpdate" class="sapUiSmallMarginEnd" />
-                    <Button id="Button4" width="12rem" text="View" type="Emphasized" press="onView" class="sapUiSmallMarginEnd" />
+                    <!-- <Button id="Button4" width="12rem" text="View" type="Emphasized" press="onView" class="sapUiSmallMarginEnd" /> -->
                 </items>
             </VBox>
         </content>

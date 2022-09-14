@@ -17,10 +17,20 @@
 				<smartform:Group id="G1" label="Select the Route" >
 					<smartform:GroupElement>
                         
-						<smartField:SmartField textLabel="Route" >
-                            
-                     </smartField:SmartField>
-                        				
+						<smartField:SmartField textLabel="From" entitySet='Route' value="{FromOrigin}" />
+                              				
+					</smartform:GroupElement>
+
+                    <smartform:GroupElement>
+                        
+                        <smartField:SmartField textLabel="To" entitySet='Route' value="{ToDestination}" />
+                              				
+					</smartform:GroupElement>
+
+                    <smartform:GroupElement>
+                        
+						<smartField:SmartField textLabel="Distance" entitySet='Route' value="{TotalDistance}" />
+                              				
 					</smartform:GroupElement>
 				
 				</smartform:Group>
@@ -34,7 +44,7 @@
                     <Button id="Button1" width="12rem" text="Add" type="Emphasized" press="onAdd" class="sapUiSmallMarginEnd" />
                     <Button id="Button2" width="12rem" text="Delete" type="Emphasized" press="onDelete" class="sapUiSmallMarginEnd" />
                     <Button id="Button3" width="12rem" text="Update" type="Emphasized" press="onUpdate" class="sapUiSmallMarginEnd" />
-                    <Button id="Button4" width="12rem" text="View" type="Emphasized" press="onView" class="sapUiSmallMarginEnd" />
+                    <!-- <Button id="Button4" width="12rem" text="View" type="Emphasized" press="onView" class="sapUiSmallMarginEnd" /> -->
                 </items>
             </VBox>
         </content>
